@@ -33,24 +33,25 @@ const hre = require("hardhat");
 
 async function main() {
   const CyberNomadNFT = await hre.ethers.getContractFactory("CyberNomadNFT");
-  const cyberNomadNFT = await CyberNomadNFT.deploy();
 
+  console.log("Before Deploy");
+  const cyberNomadNFT = await CyberNomadNFT.deploy();
+  console.log("After Deploy");
   await cyberNomadNFT.deployed();
+  console.log("After Deployed");
 
   console.log("CyberNomadsNFT deployed to: ", cyberNomadNFT.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-// main()
-//   .then(() => process.exit(0))
-//   .catch((error) => {
-//     console.error(error);
-//     process.exit(1);
-//   });
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
-
-
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+// main().catch((error) => {
+//   console.error(error);
+//   process.exitCode = 1;
+// });
