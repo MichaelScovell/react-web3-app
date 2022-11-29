@@ -1,6 +1,7 @@
 // Main Mint Component
 import { useState } from "react";
 import { ethers, BigNumber} from 'ethers';
+import {Box, Button, Flex, Input, Text} from "@chakra-ui/react";
 import cyberNomadNFT from '../CyberNomadNFT.json';
 //const dotenv = require("dotenv");
 //dotenv.config();
@@ -53,23 +54,80 @@ const MainMint = ({ accounts, setAccounts}) => {
 
     // Elements
     return (
-        <div>
-            <h1>CyberNomads</h1>
-            <p>Wth the days of pre-historic life and liberties a thing of past, society has been moulded and shaped by global entities and corporations. Who despite provide major improvements to life overall, have altered the the very core of what it meant to be human. However, there still remains a group of individuals, who grasp onto the remaining facets of what life use to be like. They are known as the Cyber Nomads, societies last bastions of the old world. Mint Today</p>
+        <Flex justify="center" algin="center" height="100hv" paddingBottom="150px">
+            <Box width="520px">
+                <div>
+                    <Text fontSize="48px" textShadow= "0 5px #000000">CyberNomads</Text>
+                    <Text fontsize="40px" letterSpacing="2px" fontFamily="VT323" textShadow="0 2px 2px #000000" position={"relative"}>
+                        Pre-historic life is a thing of the past. 
+                        Society has been moulded and shaped by global corporations, who despite provide major improvements to life overall, have altered the the very core of what it meant to be human. 
+                        However, there still remains a group of individuals, who grasp onto the remaining facets of what life use to be like. They are known as the Cyber Nomads, societies last bastions of the old world. 
+                        Mint Today!
+                    </Text>
+                </div>
             {isConnected ? (
                 <div>
-                    <div>
-                        <button onClick={handleDecrement}>-</button>
-                        <input type="number" value={mintAmount}></input>
-                        <button onClick={handleIncrement}>+</button>
-                    </div>
-                    <button onClick={handleMint}>Mint Now</button>
-                </div>
+                    <Flex align="center" justify="center">
+                        <Button
+                        backgroundColor="#D6517D"
+                        borderRadius="5px"
+                        boxShadow="0px 2px 2px 1px #0F0F0F"
+                        color="white"
+                        cursor="pointer"
+                        fontFamily="inherit"
+                        padding="15px"
+                        marginTop="10px"
+                        onClick={handleDecrement}
+                        >-</Button>
 
+                        <Input 
+                        readOnly
+                        fontFamily="inherit"
+                        width="100px"
+                        height="40px"
+                        textAlign="center"
+                        paddingLeft="19px"
+                        marginTop="10px"
+                        type="number"
+                        value={mintAmount}></Input>
+
+                        <Button
+                        backgroundColor="#D6517D"
+                        borderRadius="5px"
+                        boxShadow="0px 2px 2px 1px #0F0F0F"
+                        color="white"
+                        cursor="pointer"
+                        fontFamily="inherit"
+                        padding="15px"
+                        marginTop="10px"
+                        onClick={handleIncrement}
+                        >+</Button>  
+                                              
+                    </Flex>
+                    <Button
+                        backgroundColor="#D6517D"
+                        borderRadius="5px"
+                        boxShadow="0px 2px 2px 1px #0F0F0F"
+                        color="white"
+                        cursor="pointer"
+                        fontFamily="inherit"
+                        padding="15px"
+                        marginTop="10px"                   
+                    onClick={handleMint}
+                    >Mint Now</Button>
+                </div>
             ) : (
-                <p>You must be connected to mint Nomads</p>
+                <Text
+                marginTop="70px"
+                fontSize="30px"
+                letterSpacing="2px"
+                fontFamily="VT323"
+                textShadow="0 3px #000000"
+                color="#D6517D"
+                >You must be connected to mint Nomads</Text>
             )}
-        </div>
+            </Box>
+        </Flex>
     )
 };
 
