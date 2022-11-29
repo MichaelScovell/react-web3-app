@@ -32,7 +32,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('./assets/abandonded.gif');
+  background-image: url('./assets/abandonded.gif'); /* Background by https://gifs.alphacoders.com/authors/view/66867 */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

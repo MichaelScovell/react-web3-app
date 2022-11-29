@@ -62,7 +62,7 @@ const MainMint = ({ accounts, setAccounts}) => {
                     <Text fontSize="48px" textShadow= "0 5px #000000">CyberNomads</Text>
                     <Text fontsize="40px" letterSpacing="2px" fontFamily="VT323" textShadow="0 2px 2px #000000" position={"relative"}>
                         Pre-historic life is a thing of the past. 
-                        Society has been moulded and shaped by global corporations and have altered the the very core of what it meant to be human. 
+                        Society has been moulded and shaped by global corporations and have altered the very core of what it means to be human. 
                         However, there still remains a group of individuals, who grasp onto the remaining facets of what life use to be like. They are known as the Cyber Nomads, societies last bastions of the old world. Mint Today!
                     </Text>
                 </div>
