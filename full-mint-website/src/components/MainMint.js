@@ -1,27 +1,29 @@
 // Main Mint Component
 import { useState } from "react";
 import { ethers, BigNumber} from 'ethers';
-import cybernomadNFT from '../CyberNomadNFT.json'
+import cyberNomadNFT from '../CyberNomadNFT.json';
+//const dotenv = require("dotenv");
+//dotenv.config();
 
-const cybernomadNFTAddress = 'ADDRESS';
+const cyberNomadNFTAddress = '0x8a6e34eaA3E13c5E4D871e81545837063E21a246';
 const MainMint = ({ accounts, setAccounts}) => {
     // Updating the min amounts and setting via state
     const [mintAmount, setMintAmount] = useState(1);
     const isConnected = Boolean(accounts[0]);
 
-
     async function handleMint() {
         if (window.ethereum) {
             // Connecting to the blockchain via ethers lib
             const provider = new ethers.providers.Web3Provider(window.ethereum);
-            // Get signer to make transcation
+            // Get signer to make transaction
             const signer = provider.getSigner();
             const contract = new ethers.Contract(
-                // Contract details
-                cybernomadNFTAddress,
-                cybernomadNFT.abi,
+                // Contract details to access contract functions
+                cyberNomadNFTAddress,
+                cyberNomadNFT.abi,
                 signer
             );
+
             // Try Catch Blocks
             try{
                 const response = await contract.mint(BigNumber.from(mintAmount));
@@ -39,15 +41,15 @@ const MainMint = ({ accounts, setAccounts}) => {
         if (mintAmount <= 1) return;
         // Set mintAmount
         setMintAmount(mintAmount - 1);
-    }
+    };
 
     // Function for handling increments
     const handleIncrement = () => {
-        // If lgreater than 3 (maxWalletAmount) return
+        // If greater than 3 (maxWalletAmount) return
         if (mintAmount >= 3) return;
         // Set mintAmount
         setMintAmount(mintAmount + 1);
-    }
+    };
 
     // Elements
     return (
@@ -63,12 +65,12 @@ const MainMint = ({ accounts, setAccounts}) => {
                     </div>
                     <button onClick={handleMint}>Mint Now</button>
                 </div>
+
             ) : (
-                <p>You must be connected to mint</p>
+                <p>You must be connected to mint Nomads</p>
             )}
         </div>
     )
-    
 };
 
 export default MainMint;

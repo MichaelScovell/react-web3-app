@@ -4,7 +4,7 @@ import MainMint from './components/MainMint';
 import NavBar from './components/NavBar'
 
 function App() {
-  const [accounts, setAccounts] = useState([])
+  const [accounts, setAccounts] = useState([]);
   return (
     <div className="App">
       <NavBar accounts={accounts} setAccounts={setAccounts} />
