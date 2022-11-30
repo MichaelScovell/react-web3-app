@@ -6,7 +6,7 @@ import cyberNomadNFT from '../CyberNomadNFT.json';
 //const dotenv = require("dotenv");
 //dotenv.config();
 
-const cyberNomadNFTAddress = '0x8a6e34eaA3E13c5E4D871e81545837063E21a246';
+const cyberNomadNFTAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
 const MainMint = ({ accounts, setAccounts}) => {
     // Updating the min amounts and setting via state
     const [mintAmount, setMintAmount] = useState(1);
