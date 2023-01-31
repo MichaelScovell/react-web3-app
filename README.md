@@ -10,7 +10,7 @@ The Project is following EdRoth's tutorial:
 
 ### Application Technologies
 Technologies used:
- -Solidity - Used for developing the smart contracts
+- Solidity - Used for developing the smart contracts
 - Hardhat - Ethereum development environment used for compiling and deploying the contracts
 - Ethers.JS - JS Library used for interacting with Ethereum Blockchain
 - React - For the frontend UI
